@@ -48,6 +48,13 @@ article {
     box-shadow: #494949 0px 1px 3px, #494949 0px 1px 2px;
 }
 
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem auto;
+}
+
 header {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('_MG_7281.png');
     background-size: cover;
