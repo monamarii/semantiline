@@ -1,4 +1,3 @@
-/* ── Base ── */
 body {
     font-family: "Figtree", sans-serif;
     margin: auto;
@@ -17,10 +16,9 @@ h1, h2 {
     color: white;
 }
 
-/* ── Layout helpers ── */
 .container {
-    text-align: justify;
-    max-width: 1120px;
+    text-align: center;
+    max-width: 2010px;
     margin: 1rem;
 }
 
@@ -28,9 +26,8 @@ h1, h2 {
     display: flex;
 }
 
-/* ── Header ── */
 header {
-    position: fixed;
+    position: center;
     background: rgb(29, 28, 28);
     display: block;
     width: 100%;
@@ -49,7 +46,6 @@ header nav a:hover {
     border-bottom: 3px solid #ffffff;
 }
 
-/* ── Nav / Lists ── */
 ul {
     display: flex;
 
@@ -65,7 +61,7 @@ a {
     color: #ffffff;
 }
 a:visited {
-    color: rgb(90, 90, 90);
+    color: rgb(173, 173, 173);
 }
 a:hover {
     color: rgb(65, 65, 65);
@@ -74,13 +70,12 @@ a:active {
     color: rgb(179, 75, 75);
 }
 
-/* ── Sections ── */
 section {
     padding: 80px 0;
 }
 
 #hero {
-    text-align: center;
+    text-align: justify;
     background: rgb(29, 28, 28);
 }
 
@@ -102,7 +97,6 @@ section {
     background-repeat: no-repeat;
 }
 
-/* ── Sidebar (legacy) ── */
 aside.sidebar {
     width: 320px;
     position: sticky;
@@ -138,7 +132,6 @@ aside.sidebar {
     opacity: .5;
 }
 
-/* ── Footer ── */
 footer {
     background: rgb(29, 28, 28);
     color: white;
@@ -146,43 +139,37 @@ footer {
     padding: 1em 0;
 }
 
-/* ── Flex item sizing ── */
-
-/* Header: logo stays its natural size, nav fills remaining space */
+/* FLEX */
 header .flex-container > .logo {
-    flex: none;               /* 0 0 auto – don't grow or shrink */
+    flex: none;
 }
 
 header .flex-container > nav {
-    flex: 1;                  /* 1 1 0% – fill all available space */
+    flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-/* Section 2: article gets 2× the space of the aside */
 #teine .flex-container > article {
-    flex: 2;                  /* grow ratio 2 */
+    flex: 1;                 
     min-width: 0;
 }
 
 #teine .flex-container > aside {
-    flex: 1;                  /* grow ratio 1 */
+    flex: 1;                 
     min-width: 0;
 }
 
-/* Section 3: three equal-width articles */
 #kolmas .flex-container > article {
-    flex: 1;                  /* equal share of available space */
+    flex: 1;                  
     min-width: 0;
 }
 
-/* Section 4: two equal-width articles */
 #neljas .flex-container > article {
-    flex: 1;                  /* equal share of available space */
+    flex: 1;                
     min-width: 0;
 }
 
-/* Footer: logo stays natural size, nav fills rest */
 footer .flex-container > .logo {
     flex: none;
 }
@@ -193,9 +180,8 @@ footer .flex-container > nav {
     justify-content: flex-end;
 }
 
-/* Gap between flex siblings */
 #teine .flex-container,
 #kolmas .flex-container,
 #neljas .flex-container {
-    gap: 1.5rem;
+    gap: 3rem;
 }
