@@ -218,6 +218,15 @@ header .flex-container > nav {
 
 #kolmas .article-item > article {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+#kolmas .article-item article .button {
+    width: fit-content;
 }
 
 #neljas .flex-container > .article-item {
@@ -237,6 +246,14 @@ header .flex-container > nav {
 
 #neljas .article-item > article {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;    padding: 1rem 5rem;}
+
+#neljas .article-item article .button {
+    width: fit-content;
 }
 
 footer .flex-container > .logo {
