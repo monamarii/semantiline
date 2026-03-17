@@ -1,8 +1,13 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Figtree", sans-serif;
     margin: auto;
     padding: 0;
     color: white;
+    background: rgb(29, 28, 28);
 }
 
 .logo {
@@ -14,28 +19,54 @@ body {
 h1, h2 {
     font-family: "Figtree", sans-serif;
     color: white;
+    font-weight: bold;
+    
 }
 
 .container {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('_MG_7281.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
-    max-width: 2010px;
-    margin: 1rem;
+    max-width: 1800px;
+    margin: 2rem auto;
+    border: 2px solid #494949;
+    background-color: rgba(73, 73, 73, 0.1);
+    padding: 1rem;
+    box-shadow: #494949 0px 1px 3px, #494949 0px 1px 2px;
 }
 
 .flex-container {
     display: flex;
 }
 
+article {
+    border: 2px solid #494949;
+    background-color: rgba(73, 73, 73, 0.2);
+    padding: 1rem 3rem;
+    box-shadow: #494949 0px 1px 3px, #494949 0px 1px 2px;
+}
+
 header {
-    position: center;
-    background: rgb(29, 28, 28);
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('_MG_7281.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: block;
+    padding: 2rem 1rem;
     width: 100%;
-    border-bottom: 1px solid rgb(29, 28, 28);
+    max-width: 100vw;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    overflow-x: hidden;
 }
 
 header .flex-container {
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
 }
 
 header nav a {
@@ -48,7 +79,11 @@ header nav a:hover {
 
 ul {
     display: flex;
-
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
 }
 
 ul li {
@@ -71,31 +106,9 @@ a:active {
 }
 
 section {
-    padding: 80px 0;
+    padding: 1rem 0;
 }
 
-#hero {
-    text-align: justify;
-    background: rgb(29, 28, 28);
-}
-
-#teine {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('_MG_7281.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#kolmas {
-    background: rgb(29, 28, 28);
-}
-
-#neljas {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('_MG_7281.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 aside.sidebar {
     width: 320px;
@@ -111,7 +124,6 @@ aside.sidebar {
     color: white;
 }
 
-/* ── Buttons ── */
 .button {
     padding: 0.5rem 0.8rem;
     background-color: #7a4d4d;
@@ -139,6 +151,12 @@ footer {
     padding: 1em 0;
 }
 
+title {
+    font-family: "Figtree", sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
 /* FLEX */
 header .flex-container > .logo {
     flex: none;
@@ -146,28 +164,79 @@ header .flex-container > .logo {
 
 header .flex-container > nav {
     flex: 1;
+    min-width: 0;
     display: flex;
     justify-content: flex-end;
 }
 
+#teine .flex-container > .article-item {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+}
+
+#teine .article-item h3 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+#teine .article-item > article {
+    width: 100%;
+}
+
 #teine .flex-container > article {
-    flex: 1;                 
+    flex: 2;                 
     min-width: 0;
 }
 
 #teine .flex-container > aside {
     flex: 1;                 
     min-width: 0;
+    text-align: left;
+    line-height: 1.5;
+    margin-top: 2rem;
 }
 
-#kolmas .flex-container > article {
-    flex: 1;                  
+#kolmas .flex-container > .article-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-width: 0;
 }
 
-#neljas .flex-container > article {
-    flex: 1;                
+#kolmas .article-item h4 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+#kolmas .article-item > article {
+    width: 100%;
+}
+
+#neljas .flex-container > .article-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-width: 0;
+}
+
+#neljas .article-item h4 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+#neljas .article-item > article {
+    width: 100%;
 }
 
 footer .flex-container > .logo {
@@ -183,5 +252,5 @@ footer .flex-container > nav {
 #teine .flex-container,
 #kolmas .flex-container,
 #neljas .flex-container {
-    gap: 3rem;
+    gap: 2rem;
 }
