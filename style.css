@@ -1,0 +1,163 @@
+/* ── Base ── */
+body {
+    font-family: 'Oxanium', cursive;
+    margin: auto;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: "Oxanium", sans-serif;
+}
+
+/* ── Layout helpers ── */
+.container {
+    text-align: justify;
+    max-width: 1120px;
+    margin: 1rem;
+}
+
+.flex-container {
+    display: flex;
+}
+
+/* ── Header ── */
+header {
+    position: fixed;
+    background: white;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+header .flex-container {
+    justify-content: space-between;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+header nav a:hover {
+    border-bottom: 3px solid #fc2d91;
+}
+
+/* ── Nav / Lists ── */
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+/* ── Sections ── */
+section {
+    padding: 80px 0;
+}
+
+#hero {
+    text-align: center;
+    background: yellowgreen;
+}
+
+#kolmas {
+    background: yellowgreen;
+}
+
+/* ── Sidebar (legacy) ── */
+aside.sidebar {
+    width: 320px;
+    position: sticky;
+}
+
+.sticky-container {
+    top: 80px;
+    position: sticky;
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+}
+
+/* ── Buttons ── */
+.button {
+    padding: 0.5rem 1rem;
+    background-color: #fc2d91;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+    letter-spacing: 1.2px;
+    border-radius: 4px;
+}
+
+.button.secondary {
+    background-color: #555;
+}
+
+.button:hover {
+    opacity: .5;
+}
+
+/* ── Footer ── */
+footer {
+    background: #ebeb;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* ── Flex item sizing ── */
+
+/* Header: logo stays its natural size, nav fills remaining space */
+header .flex-container > .logo {
+    flex: none;               /* 0 0 auto – don't grow or shrink */
+}
+
+header .flex-container > nav {
+    flex: 1;                  /* 1 1 0% – fill all available space */
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Section 2: article gets 2× the space of the aside */
+#teine .flex-container > article {
+    flex: 2;                  /* grow ratio 2 */
+    min-width: 0;
+}
+
+#teine .flex-container > aside {
+    flex: 1;                  /* grow ratio 1 */
+    min-width: 0;
+}
+
+/* Section 3: three equal-width articles */
+#kolmas .flex-container > article {
+    flex: 1;                  /* equal share of available space */
+    min-width: 0;
+}
+
+/* Section 4: two equal-width articles */
+#neljas .flex-container > article {
+    flex: 1;                  /* equal share of available space */
+    min-width: 0;
+}
+
+/* Footer: logo stays natural size, nav fills rest */
+footer .flex-container > .logo {
+    flex: none;
+}
+
+footer .flex-container > nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Gap between flex siblings */
+#teine .flex-container,
+#kolmas .flex-container,
+#neljas .flex-container {
+    gap: 1.5rem;
+}
